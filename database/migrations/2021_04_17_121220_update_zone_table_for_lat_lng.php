@@ -14,15 +14,15 @@ class UpdateZoneTableForLatLng extends Migration
     public function up()
     {
         if (Schema::hasTable('zones')) {
-            if (!Schema::hasColumn('zones', 'lat')) {
+            if (!Schema::hasColumn('zones', 'latitude')) {
                 Schema::table('zones', function (Blueprint $table) {
-                    $table->double('lat', 15, 8)->default(11.015956);
+                    $table->double('latitude', 15, 8)->default(11.015956);
                 });
             }
 
-            if (!Schema::hasColumn('zones', 'lng')) {
+            if (!Schema::hasColumn('zones', 'longitude')) {
                 Schema::table('zones', function (Blueprint $table) {
-                    $table->double('lng', 15, 8)->default(76.968985);
+                    $table->double('longitude', 15, 8)->default(76.968985);
                 });
             }
         }
